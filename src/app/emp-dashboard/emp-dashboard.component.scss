@@ -1,0 +1,44 @@
+.header{
+    align-content: center;
+    background-color: rgb(238, 209, 238);
+    height:100px;
+    text-align: center;
+    padding-top:50px;
+    font-family: 'Bebas Neue', cursive;
+    font-size:14em;
+    font-weight:600;
+    color: rgb(95, 16, 16);
+}
+.performence{
+    display:flex;
+    
+    font:5em;
+    margin-left:20px;
+    padding:30px;
+    margin-top:20px;
+   
+}
+.views, .follows, .likes{
+    text-align: center;
+    margin-top:30px;
+    font-family: 'Trebuchet MS';
+    color:rgb(20, 19, 77);
+    background-image: linear-gradient(to right, rgb(159, 237, 240), rgb(7, 108, 126));
+    border:1px solid rgb(159, 237, 240);
+    border-radius: 10px;
+    width:500px;
+    height:150px;
+
+p{
+    margin-top:30px;
+    font-family: 'Kanit', sans-serif;
+
+    
+}
+}
+@media only screen and (max-width: 600px) {
+    perfomence {
+        display:flex;
+      flex-direction: row;
+    }
+  }
