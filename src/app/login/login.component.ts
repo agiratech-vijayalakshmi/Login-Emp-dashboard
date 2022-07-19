@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup , FormBuilder, Validators} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../login.service';
+
 
 
 @Component({
@@ -10,34 +12,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
 
-  ngOnInit(){
-    localStorage.setItem('username', 'viji')
-  }
-  loginForm = new FormGroup({
-    'username': new FormControl(''),
-    'password': new FormControl('')
+loginForm = new FormGroup({
+  'username': new FormControl('', Validators.required),
+  'password': new FormControl('',Validators.minLength(6))
 });
-constructor(private fb:FormBuilder, private route: Router){
-this.createForm();
-}
-createForm() {
-  this.loginForm = this.fb.group({
-    username: '',
-    password: ''
-  });
-}
-onSubmit(){
-  console.log(this.loginForm.value);
-  var userName = localStorage.getItem('username');
-  if(this.loginForm.value.username ==userName ){
-    console.log('submitted');
-    this.route.navigate(['\emp-dashboard'])
-  }
-  else{
-    alert('Enter valid username');
 
+  ngOnInit(): void{
+    
+    
+        // localStorage.setItem('isLoggedIn', 'false');
   }
+
+
+constructor( private route: Router, private loginservice:LoginService){
+ 
+}
+
+
+onSubmit(){
+ 
+  let data = {
+    userName : this.loginForm.value.username,
+    
+  };
+  localStorage.setItem('currentuser', JSON.stringify(data));
+  this.route.navigate(['\emp-dashboard']);
+
 }
 
 

@@ -24,6 +24,7 @@ var layout_1 = require("@angular/cdk/layout");
 var sidenav_1 = require("@angular/material/sidenav");
 var icon_1 = require("@angular/material/icon");
 var ng2_charts_1 = require("ng2-charts");
+var login_guard_1 = require("./login.guard");
 // import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -50,7 +51,7 @@ var AppModule = /** @class */ (function () {
                 icon_1.MatIconModule,
                 ng2_charts_1.NgChartsModule
             ],
-            providers: [],
+            providers: [login_guard_1.LoginGuard],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

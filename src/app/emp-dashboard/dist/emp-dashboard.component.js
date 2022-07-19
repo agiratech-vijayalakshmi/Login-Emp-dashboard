@@ -8,10 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.EmpDashboardComponent = void 0;
 var core_1 = require("@angular/core");
+;
 var EmpDashboardComponent = /** @class */ (function () {
     // menuItems = ['dashboard', ’sales', 'orders', 'customers', 'products'];
-    function EmpDashboardComponent() {
+    function EmpDashboardComponent(route) {
+        this.route = route;
     }
+    EmpDashboardComponent.prototype.logout = function () {
+        localStorage.removeItem('currentuser');
+        this.route.navigate(['']);
+    };
     EmpDashboardComponent.prototype.ngOnInit = function () { };
     EmpDashboardComponent = __decorate([
         core_1.Component({

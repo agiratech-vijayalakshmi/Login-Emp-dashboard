@@ -21,6 +21,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';  
 import { NgChartsModule } from 'ng2-charts';
+import { LoginGuard} from './login.guard';
+
 // import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 
 
@@ -50,7 +52,7 @@ import { NgChartsModule } from 'ng2-charts';
     NgChartsModule
     
   ],
-  providers: [],
+  providers: [LoginGuard],
   bootstrap: [AppComponent]
   
   

@@ -10,34 +10,23 @@ exports.LoginComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(fb, route) {
-        this.fb = fb;
+    function LoginComponent(route, loginservice) {
         this.route = route;
+        this.loginservice = loginservice;
         this.loginForm = new forms_1.FormGroup({
-            'username': new forms_1.FormControl(''),
-            'password': new forms_1.FormControl('')
+            'username': new forms_1.FormControl('', forms_1.Validators.required),
+            'password': new forms_1.FormControl('', forms_1.Validators.minLength(6))
         });
-        this.createForm();
     }
     LoginComponent.prototype.ngOnInit = function () {
-        localStorage.setItem('username', 'viji');
-    };
-    LoginComponent.prototype.createForm = function () {
-        this.loginForm = this.fb.group({
-            username: '',
-            password: ''
-        });
+        // localStorage.setItem('isLoggedIn', 'false');
     };
     LoginComponent.prototype.onSubmit = function () {
-        console.log(this.loginForm.value);
-        var userName = localStorage.getItem('username');
-        if (this.loginForm.value.username == userName) {
-            console.log('submitted');
-            this.route.navigate(['\emp-dashboard']);
-        }
-        else {
-            alert('Enter valid username');
-        }
+        var data = {
+            userName: this.loginForm.value.username
+        };
+        localStorage.setItem('currentuser', JSON.stringify(data));
+        this.route.navigate(['\emp-dashboard']);
     };
     LoginComponent = __decorate([
         core_1.Component({

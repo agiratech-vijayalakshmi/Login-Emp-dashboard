@@ -6,20 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.LoginModule = void 0;
+exports.LoginGuard = void 0;
 var core_1 = require("@angular/core");
-var common_1 = require("@angular/common");
-var LoginModule = /** @class */ (function () {
-    function LoginModule() {
+var LoginGuard = /** @class */ (function () {
+    function LoginGuard(route, loginservice) {
+        this.route = route;
+        this.loginservice = loginservice;
     }
-    LoginModule = __decorate([
-        core_1.NgModule({
-            declarations: [],
-            imports: [
-                common_1.CommonModule,
-            ]
+    LoginGuard.prototype.canActivate = function (route, state) {
+        if (this.loginservice.isLoggedIn) {
+            console.log(' canactivae true');
+            return true;
+        }
+        else {
+            this.route.navigate(['']);
+            return false;
+        }
+    };
+    LoginGuard = __decorate([
+        core_1.Injectable({
+            providedIn: 'root'
         })
-    ], LoginModule);
-    return LoginModule;
+    ], LoginGuard);
+    return LoginGuard;
 }());
-exports.LoginModule = LoginModule;
+exports.LoginGuard = LoginGuard;

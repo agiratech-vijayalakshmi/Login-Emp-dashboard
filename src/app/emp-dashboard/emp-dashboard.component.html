@@ -1,8 +1,30 @@
+
+  <!-- <mat-toolbar>
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon>share</mat-icon>
+ </button>
+</mat-toolbar>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+  <mat-drawer-content>Main content</mat-drawer-content>
+</mat-drawer-container> -->
+
 <div class="header" fxfxLayoutGap="32px">
     <!-- <mat-card fxFlex="100" fxLayoutGap="10px"> -->
       <h1>Employee Skills & Matrix</h1>
       <!-- </mat-card> -->
+      <button type="submit" (click)="logout()">Logout</button>
+    
 </div>
+
 
 <div class="perfomence" fxLayout="row"  fxLayoutGap="32px">
   <!-- <p> 30 Days Performance</p> -->
@@ -22,6 +44,7 @@
 <div id="chart-container">
  <app-chart></app-chart>
 </div>
+
 
 
 
