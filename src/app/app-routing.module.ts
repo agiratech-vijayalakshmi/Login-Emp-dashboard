@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './Modules/login/login.component';
 import { LoginGuard } from './login.guard';
 
 
 
 const routes: Routes = [{ path: 'emp-dashboard', 
-loadChildren: () => import('./emp-dashboard/emp-dashboard.module').then(m => m.EmpDashboardModule), canActivate:[LoginGuard]},
-{path: '', component:LoginComponent}];
+loadChildren: () => import('./Modules/emp-dashboard/emp-dashboard.module').then(m => m.EmpDashboardModule), canActivate:[LoginGuard]},
+{ path: '', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

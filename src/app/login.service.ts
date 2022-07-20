@@ -4,20 +4,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
-isLoggedIn ='false';
+
+
   constructor() { }
+  isLoggedIn:boolean | undefined;
 check()
 {
  
-if( localStorage.getItem( JSON.parse('currentuser'))!=null){
-this.isLoggedIn = 'true';
-console.log('service t');
+if(JSON.parse(localStorage.getItem('currentuser')!)!=null){
+this.isLoggedIn = true;
+
 return this.isLoggedIn;
 
 }
 else{
-this.isLoggedIn= 'false';
-console.log('service f');
+this.isLoggedIn= false;
+
 return this.isLoggedIn;
 
 }
