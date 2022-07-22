@@ -9,11 +9,18 @@
     font-family: 'Bebas Neue', cursive;
     }
     .side-nav{
-        background-color:  rgb(7, 108, 126);   
-        color:burlywood;    
+        background-color:  rgb(15, 15, 92);   
+    mat-list-item{
+        color: white;    
         font-family:'Kanit';
     }
-}
+        
+    }
+    mat-list-item:hover{
+        cursor: pointer;
+        color:rgb(15, 240, 221);
+    }
+}   
 
 .header{
     align-content: center;
@@ -49,8 +56,6 @@
 p{
     margin-top:30px;
     font-family: 'Kanit', sans-serif;
-
-    
 }
 }
 @media only screen and (max-width: 600px) {

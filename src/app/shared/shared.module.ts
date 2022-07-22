@@ -13,6 +13,20 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';  
 import { NgChartsModule } from 'ng2-charts';
+import { MatTableModule} from '@angular/material/table'
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
+
+
+
+
+
+
 
 
 @NgModule({
@@ -30,9 +44,16 @@ import { NgChartsModule } from 'ng2-charts';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    NgChartsModule
-
-
+    NgChartsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatSortModule,
+    HttpClientModule,
+    MatAutocompleteModule,
+    
+    
   ],
   exports: [
     FlexLayoutModule,
@@ -46,7 +67,17 @@ import { NgChartsModule } from 'ng2-charts';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    NgChartsModule
+    NgChartsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatSelectModule,
+    MatSortModule,
+    HttpClientModule,
+    MatAutocompleteModule,
+
+    
+
   ]
 })
 export class SharedModule { }

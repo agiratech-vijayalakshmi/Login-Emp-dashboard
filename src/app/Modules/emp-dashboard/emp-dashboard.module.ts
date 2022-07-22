@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { EmpDashboardRoutingModule } from './emp-dashboard-routing.module';
 import { EmpDashboardComponent } from './emp-dashboard.component';
 import { ChartComponent } from '../chart/chart.component';
+// import {FormControl} from '@angular/forms';
+
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
@@ -16,6 +18,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     EmpDashboardRoutingModule,
+    // FormControl,
     SharedModule
   ]
 })
