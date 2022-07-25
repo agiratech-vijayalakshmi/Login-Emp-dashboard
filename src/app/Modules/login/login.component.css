@@ -2,6 +2,6 @@
   padding: 0px;
 }
 
-.main-div mat-card > form.login-form {
+.main-div mat-card .login-form {
   padding: 30px;
 }

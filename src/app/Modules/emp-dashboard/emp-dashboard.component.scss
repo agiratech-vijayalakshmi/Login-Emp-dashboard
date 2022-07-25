@@ -1,3 +1,27 @@
+::ng-deep app-emp-dashboard{
+  
+.container{
+    
+    padding:0;
+    .toolbar{
+    background-color: rgb(15, 15, 92);
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    }
+    .side-nav{
+        background-color:  rgb(15, 15, 92);   
+    mat-list-item{
+        color: white;    
+        font-family:'Kanit';
+    }
+        
+    }
+    mat-list-item:hover{
+        cursor: pointer;
+        color:rgb(15, 240, 221);
+    }
+}   
+
 .header{
     align-content: center;
     background-color: rgb(238, 209, 238);
@@ -32,8 +56,6 @@
 p{
     margin-top:30px;
     font-family: 'Kanit', sans-serif;
-
-    
 }
 }
 @media only screen and (max-width: 600px) {
@@ -42,3 +64,4 @@ p{
       flex-direction: row;
     }
   }
+}
