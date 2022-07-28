@@ -1,0 +1,99 @@
+::ng-deep app-employee-profile{
+    .profile{
+        display:flex;
+        flex-direction: column;
+        margin:20px;
+        border: 4px solid black;
+        border-radius: 15px;
+        &__content1{
+            display:flex;
+            flex-direction: column;
+            background-color: rgb(15, 15, 92);
+            // border-right:2px solid rgb(74, 74, 78);
+            height:35rem;
+           
+            & h1{
+              text-align: center;
+                margin-top:3rem;
+                font-size:30px;
+                letter-spacing: 1.5PX;
+                color: white;
+                font-family: 'Bebas Neue', cursive;
+            }
+            & p{
+                padding-top:20px;
+                text-align:center;
+                line-height:20px;
+                font-size: 20px;
+                font-family: 'Exo 2', sans-serif;
+                color:white;
+
+            }
+            
+           &__circle{
+            position: relative;
+            margin-left: 7rem;
+            margin-top:3rem;
+            border-radius: 50%;
+            // border:1px solid blue;
+            width:18rem;
+            height:18rem;
+            background-color: white;
+
+            & img{
+                position: absolute;
+                height: 19rem;
+                right:9px;
+                left:-8px;
+                top:-10px;  
+            }
+        }
+
+        }
+  
+    &__content2{
+                display: flex;
+                flex-direction: row;
+                background-color:white;
+
+        &__edit{
+                 padding-left:43rem;
+                 padding-top:14px;
+                 color:rgb(15, 15, 92);
+
+                 &:hover{
+                    cursor: pointer;
+                 }
+                }
+        &__part1{
+            // width:45rem;
+           
+            & table{        
+                
+                 margin: 0 4rem;
+
+                & th{
+                    
+                    font-family: 'Cinzel', serif;
+                    font-size: 26px;
+                    padding-bottom: 15px;
+                    padding-left: 3rem;
+                    color:rgb(64, 64, 66);
+                 }
+                & tr td{
+                    padding:2px 16px;
+                    font-family: 'Archivo', sans-serif;
+                    font-size: 16px;
+                    color:rgb(15, 15, 92);
+                    line-height:25px;
+                }
+              
+            }           
+        }
+          
+    }
+}
+}  
+
+
+  

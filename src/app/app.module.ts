@@ -12,6 +12,10 @@ import { LoginComponent } from './Modules/login/login.component';
 import {LoginService } from './login.service';
 import { LoginGuard} from './login.guard';
 import { SharedModule } from './shared/shared.module';
+import { EmployeeProfileService } from './employee-profile.service';
+
+
+
 
 
 
@@ -24,6 +28,9 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
   
+
+    
+  
     
     
   ],
@@ -34,7 +41,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     
   ],
-  providers: [],
+  providers: [EmployeeProfileService],
   bootstrap: [AppComponent]
   
   
