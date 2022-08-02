@@ -1,0 +1,115 @@
+<div class="container" fxFlex="100">
+
+    <mat-toolbar class="container__toolbar" style="background-color :rgb(15, 15, 92)">
+        <span>Edit Profile</span>
+    </mat-toolbar>
+
+    <form [formGroup]="editForm" fxLayoutAlign="stretch" fxLayout="column" class="container__editForm">
+        <h2> Personal Details:</h2>
+        <div>
+            <mat-form-field name="FirstName" class="container__editForm__row1" appearance="standard">
+                <mat-label>FirstName</mat-label>
+                <input matInput placeholder="Enter the FirstName" formControlName="FirstName" id="FirstName"
+                    required="FirstName">
+                <mat-error *ngIf="editForm.controls.FirstName.hasError('required') ">
+                    Please enter FirstName
+                </mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field class="container__editForm__row1" appearance="standard">
+                <mat-label>LastName</mat-label>
+                <input matInput placeholder="Enter the LastName" formControlName="LastName" required="LastName">
+                <mat-error *ngIf="editForm.controls.LastName.hasError('required') ">
+                    Please enter LastName
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-select name="Gender"  formControlName="Gender"
+                     required="Gender">
+                    <mat-option [value]="'Male'">Male</mat-option>
+                    <mat-option [value]="'Female'">Female</mat-option>
+                </mat-select>
+                <mat-error *ngIf="editForm.controls.Gender.hasError('required') ">
+                    Please enter your Gender
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                
+                <mat-select name="JobTitle" formControlame="JobTitle"
+                  required="JobTitle">
+                 
+                    <mat-option *ngFor="let op of options" [value]="op.value">{{op.key}}</mat-option>
+                    <!-- <mat-option [value]=" 'Operator'">Operator</mat-option>
+                    <mat-option [value]=" 'Data Coordiator'">Data Coordiator</mat-option>
+                    <mat-option [value]=" 'Administrative Assistant I'">Administrative Assistant I</mat-option>
+                    <mat-option [value]=" 'Quality Control Specialist'">Quality Control Specialist</mat-option>
+                    <mat-option [value]=" 'Account Representative II'">Account Representative II</mat-option>
+                    <mat-option [value]="'Senior Editor'">Senior Editor</mat-option> -->
+                
+                </mat-select>
+                <mat-error *ngIf="editForm.controls.JobTitle.hasError('required') ">
+                    Please enter JobTitle
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                {{this.data[0].DOB}}
+                <input matInput type="date" formControlName="DOB"  required="DOB" /> 
+                <mat-error *ngIf="editForm.controls.DOB.hasError('required') ">
+                    Please enter DOB
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div>
+            <h2> Contact Details:</h2>
+            <mat-form-field appearance="standard">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter the Email" formControlName="Email" required="Email">
+                <mat-error *ngIf="editForm.controls.Email.hasError('email') ">
+                    Please enter valid Email ID
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="Enter the contact Number" formControlName="ContactNumber"
+                    required="ContactNumber">
+                <mat-error *ngIf="editForm.controls.ContactNumber.hasError('minlength') ">
+                    Please Enter minimum 10 digits
+                </mat-error>
+            </mat-form-field>
+
+        </div>
+        <div>
+            <h2> Proffessional Details:</h2>
+            <mat-form-field appearance="standard">
+                <mat-label>Year of Experiance</mat-label>
+                <input matInput placeholder="Enter Your Experiance" formControlName="YOExp" required="YOExp">
+                <mat-error *ngIf="editForm.controls.YOExp.hasError('required') ">
+                    Please enter Year Of Experiance
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Project Work</mat-label>
+                <input matInput placeholder="Enter the ProjectWork" formControlName="ProjectWork"
+                    required="ProjectWork">
+                <mat-error *ngIf="editForm.controls.ProjectWork.hasError('required') ">
+                    Please enter your ProjectWork
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+    <div style="display:flex; flex-direction: row; justify-content: space-between;">
+        <div class="container__closeBbtn" mat-dialog-actions>
+            <button mat-button mat-dialog-close style="color:white; background-color: red;">Close</button>
+        </div>
+        <div class="container__saveBtn" mat-dialog-actions>
+            <button mat-button style="color:white;background-color: green;" (click)="onSave()">Save</button>
+        </div>
+    </div>
+</div>

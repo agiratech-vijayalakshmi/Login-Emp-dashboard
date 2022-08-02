@@ -20,6 +20,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatDialogModule} from '@angular/material/dialog';
+
+
+
 
 
 
@@ -48,6 +52,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSortModule,
     HttpClientModule,
     MatAutocompleteModule,
+    MatDialogModule,
+    
   
     
   ],
@@ -70,7 +76,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSelectModule,
     MatSortModule,
     HttpClientModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatDialogModule,
+    
     
 
     

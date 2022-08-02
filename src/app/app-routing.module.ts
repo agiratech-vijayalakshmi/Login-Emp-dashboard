@@ -11,7 +11,8 @@ loadChildren: () => import('./Modules/emp-dashboard/emp-dashboard.module').then(
 { path: '', loadChildren: () => import('./Modules/login/login.module').then(m => m.LoginModule) },
 { path: 'employee-table', loadChildren: () => import('./employeetable/employeetable.module').then(m => m.EmployeetableModule) },
 { path: 'employee-profile', loadChildren: () => import('./employee-profile/employee-profile.module').then(m => m.EmployeeProfileModule) },
-{ path: 'employee-profile/:id', loadChildren: () => import('./employee-profile/employee-profile.module').then(m => m.EmployeeProfileModule) }];
+{ path: 'employee-profile/:id', loadChildren: () => import('./employee-profile/employee-profile.module').then(m => m.EmployeeProfileModule) },
+{ path: 'edit-profile', loadChildren: () => import('./edit-profile/edit-profile.module').then(m => m.EditProfileModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

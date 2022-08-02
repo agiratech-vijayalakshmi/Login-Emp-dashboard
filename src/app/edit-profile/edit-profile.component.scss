@@ -1,0 +1,8 @@
+::ng-deep app-edit-profile{
+.container{
+&__btns mat-button mat-dialog-close {
+    align-self: right;
+    background-color: red;
+}
+}
+}

@@ -15,7 +15,6 @@ export interface PeriodicElement {
   Id: number,
   FirstName: string,
   LastName: string,
-  Age: number,
   Email: string,
   Gender: string,
   DOB: any,
@@ -23,7 +22,8 @@ export interface PeriodicElement {
   ContactNumber: number,
   YOExp: number,
   ProjectWork: string,
-  Rating: number
+  Rating: number,
+  Image: string
 }
 
 
@@ -37,7 +37,8 @@ export class EmployeetableComponent implements OnInit {
   displayedColumns = ['select', 'Id', 'FirstName', 'LastName', 'Age', 'Email', 'Gender', 'JobTitle', 'ContactNumber'];
   displayedColumns_two = ['r2-select', 'r2-Id', 'r2-FirstName', 'r2-LastName', 'r2-Age', 'r2-Email', 'r2-Gender', 'r2-JobTitle', 'r2-ContactNumber'];
   constructor(private empservice: EmployeeProfileService) {
-    console.log(this.empservice.ELEMENT_DATA);
+    
+  
   }
   // dataSource = ELEMENT_DATA;
   dataSource = new MatTableDataSource<PeriodicElement>(this.empservice.ELEMENT_DATA);
@@ -61,6 +62,7 @@ export class EmployeetableComponent implements OnInit {
 
   filteredOptions: Observable<string[]> | undefined;
   g_options: string[] = ['Male', 'Female'];
+  selectedGender: string = "Male";
   filteredGenderOptions: Observable<string[]> | undefined;
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
