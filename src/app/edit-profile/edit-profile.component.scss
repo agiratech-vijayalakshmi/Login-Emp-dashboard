@@ -1,8 +1,23 @@
-::ng-deep app-edit-profile{
-.container{
-&__btns mat-button mat-dialog-close {
-    align-self: right;
-    background-color: red;
-}
-}
+::ng-deep app-edit-profile {
+    .container {
+        &__toolbar h1 {
+            color: white;
+        }
+
+        &__btns mat-button mat-dialog-close {
+            align-self: right;
+            background-color: red;
+
+        }
+
+        &__editForm__row1 .mat-form-field{
+            
+            justify-content:space-between;
+            flex-direction: row;
+        }
+        .mat-form-field {
+            padding: 0 10px;
+            
+        }
+    }
 }

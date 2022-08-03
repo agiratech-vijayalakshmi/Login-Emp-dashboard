@@ -34,18 +34,14 @@ export class EmployeeProfileComponent implements OnInit {
     this.emplist = this.dataArr.filter((emp: { Id: any; }) => emp.Id == this.eId)
   }
 
-  //   getInfo(empId:any) {
-
-  //    this.editList = this.empList.filter((emp: { Id: any; }) => emp.Id == empId);
-  //  console.log(this.editList);
-  //    }
 
   onEdit() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "50%";
-    dialogConfig.height = "70%";
+    dialogConfig.width = "60%";
+    dialogConfig.height = "50%";
     this.dialog.open(EditProfileComponent, { data: this.emplist });
+    
   }
 }

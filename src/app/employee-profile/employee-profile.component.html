@@ -21,7 +21,7 @@
             <div class="profile__content2__part1">
                 <table class="profile__content2__part1--tabledetails">
                     <th> Profile Details</th>
-                    <tr style="color:rgb(68, 68, 70)"> Personal Details:</tr>
+                    <tr [ngStyle]="{'color':'rgb(68, 68, 70)'}"> Personal Details:</tr>
                     <tr>
                         <td> Id </td>
                         <td> {{emplist[0].Id}}</td>
@@ -62,9 +62,9 @@
                         <td>
                             <mat-icon>thumb_up_alt</mat-icon>
                         </td>
-                        <td> {{dataArr?.Rating}}</td>
+                        <td> {{emplist[0].Rating}}</td>
                     </tr>
-                    <tr style="color:rgb(68, 68, 70)">Contact Details:</tr>
+                    <tr [ngStyle]="{'color':'rgb(68, 68, 70)'}">Contact Details:</tr>
                     <tr>
                         <td>
                             <mat-icon> email</mat-icon>

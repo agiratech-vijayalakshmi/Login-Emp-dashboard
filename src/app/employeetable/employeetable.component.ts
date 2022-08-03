@@ -34,6 +34,8 @@ export interface PeriodicElement {
   styleUrls: ['./employeetable.component.scss']
 })
 export class EmployeetableComponent implements OnInit {
+ empSource:any;
+
   displayedColumns = ['select', 'Id', 'FirstName', 'LastName', 'Age', 'Email', 'Gender', 'JobTitle', 'ContactNumber'];
   displayedColumns_two = ['r2-select', 'r2-Id', 'r2-FirstName', 'r2-LastName', 'r2-Age', 'r2-Email', 'r2-Gender', 'r2-JobTitle', 'r2-ContactNumber'];
   constructor(private empservice: EmployeeProfileService) {
@@ -41,7 +43,8 @@ export class EmployeetableComponent implements OnInit {
   
   }
   // dataSource = ELEMENT_DATA;
-  dataSource = new MatTableDataSource<PeriodicElement>(this.empservice.ELEMENT_DATA);
+ 
+  dataSource = new MatTableDataSource<PeriodicElement>(JSON.parse(localStorage.getItem('employee_Data')!));
   selection = new SelectionModel<PeriodicElement>(true, []);
 
   isAllSelected() {

@@ -1,9 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { } from '@angular/material';
+import { Router } from '@angular/router';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from "@angular/material/core";
 import { EmployeeProfileService } from '../employee-profile.service';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { map, Observable, of, startWith } from 'rxjs';
+
+// import {MaterialModule} from '@angular/material';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -11,6 +14,7 @@ import { map, Observable, of, startWith } from 'rxjs';
 })
 export class EditProfileComponent implements OnInit {
   // editForm!:FormGroup;
+
   eUpdate: any;
   eRecord: any;
   editForm = new FormGroup({
@@ -25,26 +29,16 @@ export class EditProfileComponent implements OnInit {
     'ProjectWork': new FormControl(this.data[0].ProjectWork, Validators.required)
   });
 
-  constructor(private fb: FormBuilder, private empservice: EmployeeProfileService, public dialogRef: MatDialogRef<EditProfileComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
-
-
-  }
-
-  // options: string[] = ['Account Coordinator', 'Data Coordiator', 'Operator', 'Administrative Assistant I', 'Quality Control Specialist', 'Account Representative II', 'Senior Editor', 'Programmer II'];
-  options = [{key:"Account Coordinator",value:"Account Coordinator"},{key:"Data Coordiator",value:"Data Coordiator"},{key:"Operator",value:"Operator"},{key:"Operator",value:"Operator"},{key:"Administrative Assistant I",value:"Administrative Assistant I"},{key:"Quality Control Specialist",value:"Quality Control Specialist"}]
+  constructor(private fb: FormBuilder, private empservice: EmployeeProfileService, public dialogRef: MatDialogRef<EditProfileComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private route: Router) {}
 
   ngOnInit(): void {
-    console.log(this.data);
+
 
   }
 
   onSave() {
-
-
-
     this.eUpdate = JSON.parse(localStorage.getItem('employee_Data')!);
     this.eRecord = this.eUpdate.findIndex((emp: any) => { return emp.Id == this.data[0].Id });
-    console.log(this.eRecord);
     this.eUpdate[this.eRecord].FirstName = this.editForm.controls['FirstName'].value;
     this.eUpdate[this.eRecord].LastName = this.editForm.controls['LastName'].value;
     this.eUpdate[this.eRecord].Gender = this.editForm.controls['Gender'].value;
@@ -55,12 +49,8 @@ export class EditProfileComponent implements OnInit {
     this.eUpdate[this.eRecord].YOExp = this.editForm.controls['YOExp'].value;
     this.eUpdate[this.eRecord].ProjectWork = this.editForm.controls['ProjectWork'].value;
     localStorage.setItem('employee_Data', JSON.stringify(this.eUpdate));
-    console.log(localStorage.setItem("test",JSON.stringify("scnas")))
-    console.log(this.eUpdate);
+    this.route.navigate(['/employee-table']);
     this.dialogRef.close();
-    
-   
-
   }
 }
 

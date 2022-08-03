@@ -21,13 +21,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatDialogModule} from '@angular/material/dialog';
-
-
-
-
-
-
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [],
@@ -53,7 +48,8 @@ import { MatDialogModule} from '@angular/material/dialog';
     HttpClientModule,
     MatAutocompleteModule,
     MatDialogModule,
-    
+    MatDatepickerModule,
+    MatNativeDateModule
   
     
   ],
@@ -78,7 +74,8 @@ import { MatDialogModule} from '@angular/material/dialog';
     HttpClientModule,
     MatAutocompleteModule,
     MatDialogModule,
-    
+    MatDatepickerModule,
+    MatNativeDateModule
     
 
     

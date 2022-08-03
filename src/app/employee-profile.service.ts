@@ -12,7 +12,7 @@ export class EmployeeProfileService implements OnInit{
     FirstName: "Joha",
     LastName: "Kiffin",
     Email: "jkiffin0@google.pl",
-    Gender: "F",
+    Gender: "Female",
     JobTitle: "Administrative Assistant I",
     ContactNumber: 8045632174,
     YOExp: 5,
@@ -25,7 +25,7 @@ export class EmployeeProfileService implements OnInit{
     FirstName: "Eldin",
     LastName: "Astbery",
     Email: "eastbery1@geocities.jp",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Senior Editor",
     ContactNumber: 9045632176,
     YOExp: 5,
@@ -39,7 +39,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Mounce",
 
     Email: "nmounce2@vk.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Programmer II",
     ContactNumber: 9945632170,
     YOExp: 5,
@@ -53,7 +53,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Standell",
 
     Email: "gstandell3@europa.eu",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Account Representative II",
     ContactNumber: 7772563222,
     YOExp: 7,
@@ -67,7 +67,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Domleo",
   
     Email: "kdomleo4@cornell.edu",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Quality Control Specialist",
     ContactNumber: 9922100879,
     YOExp: 5,
@@ -81,7 +81,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Turbat",
   
     Email: "uturbat5@aol.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Accounting Assistant II",
     ContactNumber: 9932100668,
     YOExp: 5,
@@ -95,7 +95,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Fowley",
     
     Email: "wfowley6@sun.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Account Coordinator",
     ContactNumber: 8822100870,
     YOExp: 5,
@@ -109,7 +109,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Trenchard",
 
     Email: "rtrenchard7@yandex.ru",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Data Coordiator",
     ContactNumber: 8722100889,
     YOExp: 5,
@@ -123,7 +123,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Dudek",
  
     Email: "kdudek8@techcrunch.com",
-    Gender: "F",
+    Gender: "Female",
     JobTitle: "Administrative Assistant I",
     ContactNumber: 7892100834,
     YOExp: 5,
@@ -137,7 +137,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Perton",
   
     Email: "mperton9@youtube.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Operator",
     ContactNumber: 77089434455,
     YOExp: 5,
@@ -152,7 +152,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Smith",
     
     Email: "smithadam@google.pl",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Administrative Assistant I",
     ContactNumber: 8045632174,
     YOExp: 5,
@@ -166,7 +166,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Weiser",
  
     Email: "jame@geocities.jp",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Senior Editor",
     ContactNumber: 9045632176,
     YOExp: 5,
@@ -180,7 +180,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Marrrier",
     
     Email: "marrie@vk.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Programmer II",
     ContactNumber: 9945632170,
     YOExp: 5,
@@ -194,7 +194,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Standell",
  
     Email: "arts@europa.eu",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Account Representative II",
     ContactNumber: 7772563222,
     YOExp: 5,
@@ -208,7 +208,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Amigon",
  
     Email: "alenna@cornell.edu",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Quality Control Specialist",
     ContactNumber: 9922100879,
     YOExp: 5,
@@ -222,7 +222,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Turbat",
    
     Email: "turbatd@aol.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Accounting Assistant II",
     ContactNumber: 9932100668,
     YOExp: 5,
@@ -236,7 +236,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Ruta",
   
     Email: "simona@sun.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Account Coordinator",
     ContactNumber: 8822100870,
     YOExp: 5,
@@ -249,7 +249,7 @@ export class EmployeeProfileService implements OnInit{
     FirstName: "Gris",
     LastName: "Albrace",
     Email: "girsa@yandex.ru",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Data Coordiator",
     ContactNumber: 8722100889,
     YOExp: 5,
@@ -263,7 +263,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Nicka",
   
     Email: "cnicka@techcrunch.com",
-    Gender: "F",
+    Gender: "Female",
     JobTitle: "Administrative Assistant I",
     ContactNumber: 7892100834,
     YOExp: 5,
@@ -277,7 +277,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Floci",
   
     Email: "mfloci9@youtube.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Operator",
     ContactNumber: 77089434455,
     YOExp: 5,
@@ -292,7 +292,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Smith",
  
     Email: "smithadam@google.pl",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Administrative Assistant I",
     ContactNumber: 8045632174,
     YOExp: 5,
@@ -306,7 +306,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Weiser",
 
     Email: "jame@geocities.jp",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Senior Editor",
     ContactNumber: 9045632176,
     YOExp: 5,
@@ -320,7 +320,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Marrrier",
   
     Email: "marrie@vk.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Programmer II",
     ContactNumber: 9945632170,
     YOExp: 5,
@@ -334,7 +334,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Standell",
   
     Email: "arts@europa.eu",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Account Representative II",
     ContactNumber: 7772563222,
     YOExp: 5,
@@ -348,7 +348,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Amigon",
  
     Email: "alenna@cornell.edu",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Quality Control Specialist",
     ContactNumber: 9922100879,
     YOExp: 5,
@@ -362,7 +362,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Turbat",
  
     Email: "turbatd@aol.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Accounting Assistant II",
     ContactNumber: 9932100668,
     YOExp: 5,
@@ -376,7 +376,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Ruta",
   
     Email: "simona@sun.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Account Coordinator",
     ContactNumber: 8822100870,
     YOExp: 5,
@@ -390,7 +390,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Albrace",
  
     Email: "girsa@yandex.ru",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Data Coordiator",
     ContactNumber: 8722100889,
     YOExp: 5,
@@ -404,7 +404,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Nicka",
 
     Email: "cnicka@techcrunch.com",
-    Gender: "F",
+    Gender: "Female",
     JobTitle: "Administrative Assistant I",
     ContactNumber: 7892100834,
     YOExp: 5,
@@ -418,7 +418,7 @@ export class EmployeeProfileService implements OnInit{
     LastName: "Floci",
    
     Email: "mfloci9@youtube.com",
-    Gender: "M",
+    Gender: "Male",
     JobTitle: "Operator",
     ContactNumber: 77089434455,
     YOExp: 5,
