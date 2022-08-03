@@ -46,6 +46,6 @@ export class EmployeeProfileComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = "50%";
     dialogConfig.height = "70%";
-    this.dialog.open(EditProfileComponent, { data: this.dataArr });
+    this.dialog.open(EditProfileComponent, { data: this.emplist });
   }
 }
