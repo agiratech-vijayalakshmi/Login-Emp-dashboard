@@ -112,10 +112,10 @@
     </form>
     <div style="display:flex; flex-direction: row; justify-content: space-between;">
         <div class="container__closeBbtn" mat-dialog-actions>
-            <button mat-button mat-dialog-close [ngStyle]="{'color':'white','background-color': 'red'}";>Close</button>
+            <button mat-button mat-dialog-close [ngStyle]="{'color':'white','background-color': 'red'}">Close</button>
         </div>
         <div class="container__saveBtn" mat-dialog-actions>
-            <button mat-button [ngStyle]="{'color':'white','background-color': 'green'}"; (click)="onSave()">Save</button>
+            <button mat-button (click)="onSave()" [ngStyle]="{'color':'white','background-color': 'green'}">Save</button>
         </div>
     </div>
 </div>
