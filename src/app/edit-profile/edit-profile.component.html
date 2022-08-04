@@ -1,0 +1,121 @@
+<div class="container">
+
+    <mat-toolbar class="container__toolbar" [ngStyle]="{'background-color' :'rgb(15, 15, 92)'}">
+        <h1>Edit Profile</h1>
+    </mat-toolbar>
+
+    <form [formGroup]="editForm" fxLayoutAlign="stretch" fxLayout="column" class="container__editForm">
+        <h3> Personal Details:</h3>
+
+        <div class="container__editForm__row1">
+
+            <mat-form-field name="FirstName" appearance="standard">
+                <mat-label>FirstName</mat-label>
+                <input matInput placeholder="Enter the FirstName" formControlName="FirstName" id="FirstName"
+                    required="FirstName" style="padding-right: 30px;">
+                <mat-error *ngIf="editForm.controls.FirstName.hasError('required') ">
+                    Please enter FirstName
+                </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="standard">
+                <mat-label>LastName</mat-label>
+                <input matInput placeholder="Enter the LastName" formControlName="LastName" required="LastName">
+                <mat-error *ngIf="editForm.controls.LastName.hasError('required') ">
+                    Please enter LastName
+                </mat-error>
+            </mat-form-field>
+
+        </div>
+
+        <div class="container__editForm__row2">
+            <mat-form-field>
+                <mat-select name="Gender" placeholder="Gender" formControlName="Gender" required="Gender">
+                    <mat-option [value]="'Male'">Male</mat-option>
+                    <mat-option [value]="'Female'">Female</mat-option>
+                </mat-select>
+                <mat-error *ngIf="editForm.controls.Gender.hasError('required') ">
+                    Please enter your Gender
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Choose a JobTitle</mat-label>
+                {{this.data.JobTitle}}
+                <mat-select name="JobTitle" placeholder="JobTitle" formControlame="JobTitle" required="JobTitle">
+                    <mat-option [value]=" 'Operator'">Operator</mat-option>
+                    <mat-option [value]=" 'Data Coordiator'">Data Coordiator</mat-option>
+                    <mat-option [value]=" 'Administrative Assistant I'">Administrative Assistant I</mat-option>
+                    <mat-option [value]=" 'Quality Control Specialist'">Quality Control Specialist</mat-option>
+                    <mat-option [value]=" 'Account Representative II'">Account Representative II</mat-option>
+                    <mat-option [value]="'Senior Editor'">Senior Editor</mat-option>
+                    <mat-option [value]="'Senior Editor'">Account Assistant II</mat-option>
+                    <mat-option [value]="'Senior Editor'">Account Cordinator</mat-option>
+                    <mat-option [value]="'Senior Editor'">Programmer II</mat-option>
+                </mat-select>
+                <mat-error *ngIf="editForm.controls.JobTitle.hasError('required') ">
+                    Please enter JobTitle
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="container__editForm__row3">
+            <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <!-- {{this.data.DOB}} -->
+                <input matInput [matDatepicker]="picker" formControlName="DOB" required="DOB">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="container__editForm__row4">
+            <h3> Contact Details:</h3>
+            <mat-form-field appearance="standard">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter the Email" formControlName="Email" required="Email">
+                <mat-error *ngIf="editForm.controls.Email.hasError('email') ">
+                    Please enter valid Email ID
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="Enter the contact Number" formControlName="ContactNumber"
+                    required="ContactNumber">
+                <mat-error *ngIf="editForm.controls.ContactNumber.hasError('minlength') ">
+                    Please Enter minimum 10 digits
+                </mat-error>
+            </mat-form-field>
+
+        </div>
+        <div class="container__editForm__row5">
+            <h3> Proffessional Details:</h3>
+            <mat-form-field appearance="standard">
+                <mat-label>Year of Experiance</mat-label>
+                <input matInput placeholder="Enter Your Experiance" formControlName="YOExp" required="YOExp">
+                <mat-error *ngIf="editForm.controls.YOExp.hasError('required') ">
+                    Please enter Year Of Experiance
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Project Work</mat-label>
+                <input matInput placeholder="Enter the ProjectWork" formControlName="ProjectWork"
+                    required="ProjectWork">
+                <mat-error *ngIf="editForm.controls.ProjectWork.hasError('required') ">
+                    Please enter your ProjectWork
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+    <div [ngStyle]="{'display':'flex', 'flex-direction': 'row', 'justify-content': 'space-between'}">
+        <div class="container__closeBbtn" mat-dialog-actions>
+            <button mat-button mat-dialog-close [ngStyle]="{'color':'white','background-color': 'red'}">Close</button>
+        </div>
+        <div class="container__saveBtn" mat-dialog-actions>
+            <button mat-button (click)="onSave()" [ngStyle]="{'color':'white','background-color': 'green'}">Save</button>
+        </div>
+    </div>
+</div>

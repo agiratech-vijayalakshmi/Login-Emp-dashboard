@@ -1,29 +1,52 @@
-::ng-deep app-employeetable{
-    .emptable__data{
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    background-color: #dfe2e1;
-    
-    height: 600px;
-    th, td{
-        border: 1px solid #ddd;
-        padding: 8px;
-               
-    }
-    th{
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #ead2f8d8;
-        color: rgb(0, 0, 0);
-        font-size: 18;
-        
-    }
-}
+::ng-deep app-employeetable {
 
-.emp_data tr:nth-child(even){background-color: #fff;}
+    .empTable {
 
-.emp_data td:hover {background-color: rgb(243, 194, 255);}
+        &__toolbar {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+
+            &__title h1 {
+                font-size: 30px;
+            }
+        }
+
+        margin: 20px;
+
+        &__data {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #dfe2e1;
+
+            &--theader1 {
+                text-align: left;
+                background-color: rgb(15, 15, 92);
+                color: rgb(255, 255, 255);
+                font-size: 18;
+            }
+
+            &--theader2 {
+                background-color: rgb(190, 190, 190);
+                color: rgb(15, 15, 92);
+                font-size: 18;
+            }
+
+            &--checkbox {
+                border: 1px solid white;
+            }
+        }
+
+        &--paginator {
+            background-color: rgb(15, 15, 92);
+            color: rgb(255, 255, 255);
+            font-size: 18;
+        }
+    }
+
+    .emptable__data tr:hover {
+        background-color: rgb(237, 234, 238);
+    }
 
 }
