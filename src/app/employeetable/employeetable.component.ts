@@ -9,9 +9,8 @@ import { map, Observable } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 import { EmployeeProfileService } from '../employee-profile.service';
 
-
-
 export interface PeriodicElement {
+
   Id: number,
   FirstName: string,
   LastName: string,
@@ -23,27 +22,35 @@ export interface PeriodicElement {
   YOExp: number,
   ProjectWork: string,
   Rating: number,
-  Image: string
+  Image: string,
+  isEdit: boolean
 }
 
-
+interface Gender {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-employeetable',
   templateUrl: './employeetable.component.html',
   styleUrls: ['./employeetable.component.scss']
 })
-export class EmployeetableComponent implements OnInit {
- empSource:any;
 
-  displayedColumns = ['select', 'Id', 'FirstName', 'LastName', 'Age', 'Email', 'Gender', 'JobTitle', 'ContactNumber'];
-  displayedColumns_two = ['r2-select', 'r2-Id', 'r2-FirstName', 'r2-LastName', 'r2-Age', 'r2-Email', 'r2-Gender', 'r2-JobTitle', 'r2-ContactNumber'];
+export class EmployeetableComponent implements OnInit {
+
+  itemData: any;
+  empSource: any;
+  items: any;
+  selectedValue: string | undefined;
+  displayedColumns = ['select', 'Id', 'FirstName', 'LastName', 'Email', 'Gender', 'JobTitle', 'ContactNumber'];
+  displayedColumns_two = ['r2-select', 'r2-Id', 'r2-FirstName', 'r2-LastName', 'r2-Email', 'r2-Gender', 'r2-JobTitle', 'r2-ContactNumber'];
+
   constructor(private empservice: EmployeeProfileService) {
-    
-  
+
+    // this.items = localStorage.setItem('employee_Data',JSON.stringify(this.empservice.ELEMENT_DATA));
   }
-  // dataSource = ELEMENT_DATA;
- 
+
   dataSource = new MatTableDataSource<PeriodicElement>(JSON.parse(localStorage.getItem('employee_Data')!));
   selection = new SelectionModel<PeriodicElement>(true, []);
 
@@ -63,10 +70,7 @@ export class EmployeetableComponent implements OnInit {
 
   options: string[] = ['Account Coordinator', 'Data Coordiator', 'Operator', 'Administrative Assistant I', 'Quality Control Specialist', 'Account Representative II', 'Senior Editor', 'Programmer II'];
 
-  filteredOptions: Observable<string[]> | undefined;
-  g_options: string[] = ['Male', 'Female'];
-  selectedGender: string = "Male";
-  filteredGenderOptions: Observable<string[]> | undefined;
+  filterOptions: Observable<string[]> | undefined;
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
@@ -74,30 +78,36 @@ export class EmployeetableComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
 
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filterOptions = this.myControl.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value || '')),
+      map(option => this.filterDep(option || '')),
     );
 
-    this.filteredGenderOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this.g_filter(value || '')),
-    );
+    this.getItem();
+    this.onSave();
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
-  private g_filter(value: string): string[] {
-    const filterValue_gender = value.toLowerCase();
-
-    return this.g_options.filter(option => option.toLowerCase().includes(filterValue_gender));
+ filterDep(value: string): string[] {
+    return this.options.filter(option => option.toLowerCase().indexOf(value.toLowerCase())===0);
   }
 
+   getItem() {
+     this.items = JSON.parse(localStorage.getItem('employee_Data')!);
+   }
+  onEdit(item: any) {
+    item.isEdit = true;
+  }
+  onSave() {
+
+    const updatedItem = this.dataSource.data;
+    localStorage.setItem('employee_Data', JSON.stringify(updatedItem));
+    this.close(); 
+  }
+  close() {
+    this.items.isEdit = false;
+  }
 }

@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,6 +23,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [],
@@ -49,7 +50,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatAutocompleteModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule
   
     
   ],
@@ -75,7 +77,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatAutocompleteModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule
     
 
     

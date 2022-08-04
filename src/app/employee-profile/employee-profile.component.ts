@@ -18,7 +18,7 @@ export class EmployeeProfileComponent implements OnInit {
   eData: any;
   employeeID: any;
   FirstName: any;
-  dataArr!: any;
+  dataArr: any;
   editList: any;
   emplist: any
   constructor(private empservice: EmployeeProfileService, private activatedroute: ActivatedRoute, private dialog: MatDialog) {

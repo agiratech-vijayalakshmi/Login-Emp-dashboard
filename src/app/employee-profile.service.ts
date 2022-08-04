@@ -19,7 +19,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"assets/images/profile_img.png"
+    Image:"assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 2,
     FirstName: "Eldin",
@@ -32,7 +33,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "8/03/1994",
-    Image:"assets/images/profile_img.png"
+    Image:"assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 3,
     FirstName: "Nahum",
@@ -46,7 +48,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 3.5,
     DOB: "10/04/1992",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 4,
     FirstName: "Gallard",
@@ -60,7 +63,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1998",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 5,
     FirstName: "Koenraad",
@@ -74,7 +78,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1996",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 6,
     FirstName: "Uriah",
@@ -88,7 +93,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/2000",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 7,
     FirstName: "Waldemar",
@@ -102,7 +108,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/2001",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 8,
     FirstName: "Rodolfo",
@@ -116,7 +123,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 9,
     FirstName: "Konstance",
@@ -130,7 +138,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1997",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 10,
     FirstName: "Monti",
@@ -144,7 +153,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1998",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   },
   {
     Id: 11,
@@ -159,7 +169,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1999",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 12,
     FirstName: "James",
@@ -173,7 +184,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1999",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 13,
     FirstName: "Joshaphine",
@@ -187,7 +199,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1998",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 14,
     FirstName: "Art",
@@ -201,7 +214,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1997",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 15,
     FirstName: "Lenna",
@@ -215,7 +229,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1996",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 16,
     FirstName: "Donnete",
@@ -229,7 +244,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 17,
     FirstName: "Simona  ",
@@ -243,7 +259,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 18,
     FirstName: "Gris",
@@ -256,7 +273,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 19,
     FirstName: "Cammy",
@@ -270,7 +288,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 20,
     FirstName: "Matti",
@@ -284,7 +303,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   },
   {
     Id: 21,
@@ -299,7 +319,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 22,
     FirstName: "James",
@@ -313,7 +334,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 23,
     FirstName: "Joshaphine",
@@ -327,7 +349,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 24,
     FirstName: "Art",
@@ -341,7 +364,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 25,
     FirstName: "Lenna",
@@ -355,7 +379,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 26,
     FirstName: "Donnete",
@@ -369,7 +394,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 27,
     FirstName: "Simona  ",
@@ -383,7 +409,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 28,
     FirstName: "Gris",
@@ -397,7 +424,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 29,
     FirstName: "Cammy",
@@ -411,7 +439,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "10/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }, {
     Id: 30,
     FirstName: "Matti",
@@ -425,7 +454,8 @@ export class EmployeeProfileService implements OnInit{
     ProjectWork: "Deepink",
     Rating: 4,
     DOB: "05/04/1995",
-    Image:"../../assets/images/profile_img.png"
+    Image:"../../assets/images/profile_img.png",
+    isEdit:false
   }
   ];
   empData: any;
@@ -440,14 +470,14 @@ export class EmployeeProfileService implements OnInit{
   setEmployeeData() {
     localStorage.setItem('employee_Data',JSON.stringify(this.ELEMENT_DATA));
   }
-  getAllData() {
-    let allData = JSON.parse(localStorage.getItem('employee_Data')!);
-    return of(allData);
-  }
+  // getAllData() {
+  //   let allData = JSON.parse(localStorage.getItem('employee_Data')!);
+  //   return of(allData);
+  // }
 
-  getEmployeeDetails(empId: string) {
-    let empDetails = JSON.parse(localStorage.getItem('employee_Data')!);
-    return empDetails.find((element: any) => element.Id == empId)
-  }
+  // getEmployeeDetails(empId: string) {
+  //   let empDetails = JSON.parse(localStorage.getItem('employee_Data')!);
+  //   return empDetails.find((element: any) => element.Id == empId)
+  // }
 
 }

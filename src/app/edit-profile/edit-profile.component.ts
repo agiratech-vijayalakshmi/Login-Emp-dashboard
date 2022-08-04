@@ -22,7 +22,7 @@ export class EditProfileComponent implements OnInit {
     'LastName': new FormControl(this.data[0].LastName, Validators.required),
     'Gender': new FormControl(this.data[0].Gender, Validators.required),
     'JobTitle': new FormControl(this.data[0].JobTitle, Validators.required),
-    'DOB': new FormControl(this.data[0].DOB, Validators.required),
+    'DOB': new FormControl(new Date(this.data[0].DOB), Validators.required),
     'Email': new FormControl(this.data[0].Email, Validators.email),
     'ContactNumber': new FormControl(this.data[0].ContactNumber, Validators.minLength(10)),
     'YOExp': new FormControl(this.data[0].YOExp, Validators.required),

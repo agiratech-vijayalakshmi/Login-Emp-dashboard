@@ -1,9 +1,31 @@
-<div class="emptable">
-  <table mat-table [dataSource]=" dataSource" class="emptable__data" matSort>
+<div class="empTable">
+  <mat-toolbar class="empTable__toolbar" [ngStyle]="{'background-color' :'rgb(15, 15, 92)'}">
+    <div class="empTable__toolbar__title">
+      <h1>Employee Table</h1>
+    </div>
+    <div class="empTable__toolbar__icons">
+      <div *ngIf="this.items.isEdit">
+        <button mat-button (click)="onSave()">
+          <mat-icon>done_outline</mat-icon>
+        </button>
+
+        <button mat-button (click)="close()">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </div>
+      <div *ngIf="!this.items.isEdit">
+        <button mat-button (click)="onEdit(this.items)">
+          <mat-icon> border_color</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <table mat-table [dataSource]=" dataSource" class="empTable__data" matSort>
     <!-- R1_CheckBox Column -->
     <ng-container matColumnDef="select">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>
-        <mat-checkbox class="emptable__data--checkbox" (change)="$event ? masterToggle() : null"
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>
+        <mat-checkbox class="empTable__data--checkbox" (change)="$event ? masterToggle() : null"
           [checked]="selection.hasValue() && isAllSelected()"
           [indeterminate]="selection.hasValue() && !isAllSelected()">
         </mat-checkbox>
@@ -17,69 +39,118 @@
     </ng-container>
     <!-- R1_Id Column -->
     <ng-container matColumnDef="Id">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
       <td mat-cell *matCellDef="let element"><a [routerLink]="['/employee-profile']" [queryParams]="{ Id: element.Id}">
-          {{element.Id}}
-        </a></td>
+          {{element.Id}} </a></td>
     </ng-container>
     <!-- R1_FirstName Column -->
     <ng-container matColumnDef="FirstName">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>FirstName</th>
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>FirstName</th>
 
-      <td mat-cell *matCellDef="let element"> {{element.FirstName}} </td>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="this.items.isEdit">
+          <input type="text" [(ngModel)]="element.FirstName" class="form-control" />
+        </div>
+        <div *ngIf="!this.items.isEdit">
+          {{element.FirstName}}
+        </div>
+      </td>
     </ng-container>
     <!-- R1_LastName Column -->
     <ng-container matColumnDef="LastName">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>LastName</th>
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>LastName</th>
 
-      <td mat-cell *matCellDef="let element"> {{element.LastName}} </td>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="this.items.isEdit">
+          <input type="text" [(ngModel)]="element.LastName" class="form-control" />
+        </div>
+        <div *ngIf="!this.items.isEdit">
+          {{element.LastName}}
+        </div>
+      </td>
     </ng-container>
+
     <!-- R1_Age Column -->
-    <ng-container matColumnDef="Age">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
-      <td mat-cell *matCellDef="let element"> {{element.Age}} </td>
-    </ng-container>
+    <!-- <ng-container matColumnDef="Age">
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.Age} </td>
+    </ng-container> -->
+
     <!-- R1_Email Column -->
+
     <ng-container matColumnDef="Email">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-      <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="this.items.isEdit">
+          <input type="text" [(ngModel)]="element.Email" class="form-control" />
+        </div>
+        <div *ngIf="!this.items.isEdit">
+          {{element.Email}}
+        </div>
+      </td>
     </ng-container>
+
     <!-- R1_Gender Column -->
     <ng-container matColumnDef="Gender">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
 
-      <td mat-cell *matCellDef="let element"> {{element.Gender}} </td>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="this.items.isEdit">
+          <select [(ngModel)]="element.Gender" name="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div *ngIf="!this.items.isEdit">
+          {{element.Gender}}
+        </div>
+      </td>
     </ng-container>
+
     <!-- R1_JobTitle Column -->
     <ng-container matColumnDef="JobTitle">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>JobTitle</th>
-
-      <td mat-cell *matCellDef="let element"> {{element.JobTitle}} </td>
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header>JobTitle</th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="this.items.isEdit">
+          <input type="text" [(ngModel)]="element.JobTitle" class="form-control" />
+        </div>
+        <div *ngIf="!this.items.isEdit">
+          {{element.JobTitle}}
+        </div>
+      </td>
     </ng-container>
+
     <!--R1_ContactNumber Column -->
     <ng-container matColumnDef="ContactNumber">
-      <th class="emptable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header> ContactNumber </th>
-      <td mat-cell *matCellDef="let element"> {{element.ContactNumber}} </td>
+      <th class="empTable__data--theader1" mat-header-cell *matHeaderCellDef mat-sort-header> ContactNumber </th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="this.items.isEdit">
+          <input type="text" [(ngModel)]="element.ContactNumber" class="form-control" />
+        </div>
+        <div *ngIf="!this.items.isEdit">
+          {{element.ContactNumber}}
+        </div>
+      </td>
     </ng-container>
 
     <!-- R2_CheckBox Column -->
 
     <ng-container matColumnDef="r2-select">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef>
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef>
 
       </th>
     </ng-container>
 
     <!--R2_Id Column -->
     <ng-container matColumnDef="r2-Id">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef></th>
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef></th>
     </ng-container>
 
 
     <!-- R2_FirstName Column -->
     <ng-container matColumnDef="r2-FirstName">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef>
-        <mat-form-field class="emptable__data--fname" appearance="standard">
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef>
+        <mat-form-field class="empTable__data--fname" appearance="standard">
           <input matInput (keyup)="applyFilter($event)" placeholder="Search FirstName" #input>
         </mat-form-field>
       </th>
@@ -87,8 +158,8 @@
 
     <!-- R2_LastName Column -->
     <ng-container matColumnDef="r2-LastName">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef>
-        <mat-form-field class="emptable__data--lname" appearance="standard">
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef>
+        <mat-form-field class="empTable__data--lname" appearance="standard">
           <input matInput (keyup)="applyFilter($event)" placeholder="Search LastName" #input>
         </mat-form-field>
       </th>
@@ -96,37 +167,37 @@
 
     <!-- R2_Age Column -->
     <ng-container matColumnDef="r2-Age">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef></th>
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef></th>
     </ng-container>
 
     <!-- R2_Email Column -->
     <ng-container matColumnDef="r2-Email">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef></th>
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef></th>
     </ng-container>
 
     <!-- R2_Gender Column -->
     <ng-container matColumnDef="r2-Gender">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef>
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef>
         <form class="example-form">
-          <mat-form-field>
+          <!-- <mat-form-field>
             <mat-select name="Gender" [(value)]="selectedGender" placeholder="Select Gender">
-                <mat-option [value]="'Male'">Male</mat-option>
-                <mat-option [value]="'Female'">Female</mat-option>
+              <mat-option [value]="'Male'">Male</mat-option>
+              <mat-option [value]="'Female'">Female</mat-option>
             </mat-select>
-        </mat-form-field>
+          </mat-form-field> -->
         </form>
       </th>
     </ng-container>
 
     <!-- R2_JobTitle Column -->
     <ng-container matColumnDef="r2-JobTitle">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef>
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef>
         <form class="example-form">
           <mat-form-field class="example-full-width">
             <input type="text" placeholder="Pick JobTitle" aria-label="JobTitle" matInput [formControl]="myControl"
               [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete">
-              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              <mat-option *ngFor="let option of filterOptions | async" [value]="option">
                 {{option}}
               </mat-option>
             </mat-autocomplete>
@@ -137,7 +208,7 @@
 
     <!-- R2_Contact Number Column -->
     <ng-container matColumnDef="r2-ContactNumber">
-      <th class="emptable__data--theader2" mat-header-cell *matHeaderCellDef></th>
+      <th class="empTable__data--theader2" mat-header-cell *matHeaderCellDef></th>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -146,6 +217,6 @@
 
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator class="emptable--paginator" [length]="30" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 30]">
+  <mat-paginator class="empTable--paginator" [length]="30" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 30]">
   </mat-paginator>
 </div>

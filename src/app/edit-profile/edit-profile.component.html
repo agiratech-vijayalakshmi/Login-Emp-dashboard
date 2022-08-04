@@ -5,7 +5,7 @@
     </mat-toolbar>
 
     <form [formGroup]="editForm" fxLayoutAlign="stretch" fxLayout="column" class="container__editForm">
-        <h2> Personal Details:</h2>
+        <h3> Personal Details:</h3>
 
         <div class="container__editForm__row1">
 
@@ -61,9 +61,9 @@
         <div class="container__editForm__row3">
             <mat-form-field>
                 <mat-label>Choose a date</mat-label>
-                {{this.data.DOB}}
+                <!-- {{this.data.DOB}} -->
                 <input matInput [matDatepicker]="picker" formControlName="DOB" required="DOB">
-                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-hint>DD/MM/YYYY</mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="picker">
                     <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
                 </mat-datepicker-toggle>
@@ -71,7 +71,7 @@
             </mat-form-field>
         </div>
         <div class="container__editForm__row4">
-            <h2> Contact Details:</h2>
+            <h3> Contact Details:</h3>
             <mat-form-field appearance="standard">
                 <mat-label>Email</mat-label>
                 <input matInput placeholder="Enter the Email" formControlName="Email" required="Email">
@@ -91,7 +91,7 @@
 
         </div>
         <div class="container__editForm__row5">
-            <h2> Proffessional Details:</h2>
+            <h3> Proffessional Details:</h3>
             <mat-form-field appearance="standard">
                 <mat-label>Year of Experiance</mat-label>
                 <input matInput placeholder="Enter Your Experiance" formControlName="YOExp" required="YOExp">
@@ -110,7 +110,7 @@
             </mat-form-field>
         </div>
     </form>
-    <div style="display:flex; flex-direction: row; justify-content: space-between;">
+    <div [ngStyle]="{'display':'flex', 'flex-direction': 'row', 'justify-content': 'space-between'}">
         <div class="container__closeBbtn" mat-dialog-actions>
             <button mat-button mat-dialog-close [ngStyle]="{'color':'white','background-color': 'red'}">Close</button>
         </div>
