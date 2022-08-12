@@ -1,29 +1,78 @@
-::ng-deep app-employeetable{
-    .emptable__data{
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    background-color: #dfe2e1;
-    
-    height: 600px;
-    th, td{
-        border: 1px solid #ddd;
-        padding: 8px;
-               
-    }
-    th{
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #ead2f8d8;
-        color: rgb(0, 0, 0);
-        font-size: 18;
-        
-    }
-}
+::ng-deep app-employeetable {
 
-.emp_data tr:nth-child(even){background-color: #fff;}
+    .empTable {
 
-.emp_data td:hover {background-color: rgb(243, 194, 255);}
+        &__toolbar {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            width: 78.7rem;
+
+            & mat-icon {
+                font-size: 24px;
+                margin-left: -10px;
+            }
+
+            &__title span {
+                font-size: 23px;
+                font-family: 'Bebas Neue', cursive;
+                padding-bottom: px;
+            }
+        }
+
+        margin: 20px;
+
+        &__data {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            // background-color: #dfe2e1;
+          
+            &--checkboxData {
+                border: 1px solid white;
+                background-color: rgb(242, 243, 251);
+                border-left: 1px solid hsl(0, 7%, 83%);
+                border-right: 1px solid hsl(0, 7%, 83%);
+            }
+
+            & td,
+            th {
+                border-bottom: 1px solid hsl(0, 7%, 83%);
+                border-top: 1px solid hsl(0, 7%, 83%);
+                border-left: 1px solid hsl(0, 7%, 83%);
+                border-right: 1px solid hsl(0, 7%, 83%);
+                padding: 17px;
+                font-family: 'Poppins', sans-serif;
+
+                // background-color: white;
+
+            }
+
+            &--theader1 {
+                text-align: left;
+                background-color: rgb(242, 243, 251);
+                color: rgb(43, 50, 69);
+                font-size: 18;
+            }
+
+            &--theader2 {
+                background-color: rgb(242, 243, 251);
+                color: rgb(43, 50, 69);
+                font-size: 18;
+            }
+
+        }
+
+        &--paginator {
+            background-color: rgb(242, 243, 251);
+            color: rgb(43, 50, 69);
+            font-size: 18;
+        }
+    }
+
+    .emptable__data tr:hover {
+        background-color: rgb(237, 234, 238);
+
+    }
 
 }
