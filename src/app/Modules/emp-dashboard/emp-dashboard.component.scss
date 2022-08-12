@@ -1,12 +1,16 @@
 ::ng-deep app-emp-dashboard{
-  
-.container{
     
+.container{
+    overflow-y: hidden;
     padding:0;
     .toolbar{
     background-color: rgb(15, 15, 92);
     color: white;
     font-family: 'Bebas Neue', cursive;
+    justify-content: space-between;
+    }
+    .logout_btn{
+     background-color: white;   
     }
     .side-nav{
         background-color:  rgb(15, 15, 92);   
@@ -21,6 +25,7 @@
         color:rgb(15, 240, 221);
     }
 }   
+
 
 .header{
     align-content: center;

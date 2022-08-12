@@ -18,28 +18,17 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
-  
 
-    
-  
-    
-    
   ],
   imports: [
-    BrowserModule,
+   BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
+
+    SharedModule
     
   ],
   providers: [EmployeeProfileService],

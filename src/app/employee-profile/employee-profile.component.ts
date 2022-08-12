@@ -1,11 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { EmployeeProfileService } from '../employee-profile.service';
 import { Observable, of } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SeriesViewerDescriptionMetadata } from 'igniteui-angular-core';
 import { Pipe, PipeTransform } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
+
 
 @Component({
   selector: 'app-employee-profile',
@@ -21,7 +23,7 @@ export class EmployeeProfileComponent implements OnInit {
   dataArr: any;
   editList: any;
   emplist: any
-  constructor(private empservice: EmployeeProfileService, private activatedroute: ActivatedRoute, private dialog: MatDialog) {
+  constructor(private empservice: EmployeeProfileService, private activatedroute: ActivatedRoute, private dialog: MatDialog, private route:Router) {
     // localStorage.setItem('employee_Data', JSON.stringify(this.empservice.ELEMENT_DATA));
   }
   ngOnInit(): void {
@@ -34,14 +36,19 @@ export class EmployeeProfileComponent implements OnInit {
     this.emplist = this.dataArr.filter((emp: { Id: any; }) => emp.Id == this.eId)
   }
 
-
   onEdit() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
     dialogConfig.height = "50%";
-    this.dialog.open(EditProfileComponent, { data: this.emplist });
+    this.dialog.open(EditProfileComponent, { data: this.emplist }).afterClosed().subscribe(result=>{
+     
+    this.dataArr = JSON.parse(localStorage.getItem('employee_Data')!);
+    this.emplist = this.dataArr.filter((emp: { Id: any; }) => emp.Id == this.eId)
+
+    });
+
     
   }
 }

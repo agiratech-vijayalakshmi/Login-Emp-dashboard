@@ -30,7 +30,7 @@ loginForm = new FormGroup({
 
 
 constructor( private route: Router, private loginservice:LoginService, private employeeservice: EmployeeProfileService){
- 
+//  console.log("login component");
 }
 
 

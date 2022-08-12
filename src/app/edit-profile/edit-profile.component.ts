@@ -13,43 +13,52 @@ import { map, Observable, of, startWith } from 'rxjs';
   styleUrls: ['./edit-profile.component.scss']
 })
 export class EditProfileComponent implements OnInit {
-  // editForm!:FormGroup;
 
   eUpdate: any;
   eRecord: any;
-  editForm = new FormGroup({
-    'FirstName': new FormControl(this.data[0].FirstName, Validators.required),
-    'LastName': new FormControl(this.data[0].LastName, Validators.required),
-    'Gender': new FormControl(this.data[0].Gender, Validators.required),
-    'JobTitle': new FormControl(this.data[0].JobTitle, Validators.required),
-    'DOB': new FormControl(new Date(this.data[0].DOB), Validators.required),
-    'Email': new FormControl(this.data[0].Email, Validators.email),
-    'ContactNumber': new FormControl(this.data[0].ContactNumber, Validators.minLength(10)),
-    'YOExp': new FormControl(this.data[0].YOExp, Validators.required),
-    'ProjectWork': new FormControl(this.data[0].ProjectWork, Validators.required)
+  isUpdate:Boolean | undefined;
+  constructor(private fb: FormBuilder, private empservice: EmployeeProfileService, public dialogRef: MatDialogRef<EditProfileComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private route: Router) { }
+
+  ngOnInit(): void { }
+
+  editForm = this.fb.group({
+    FirstName: [(this.data[0].FirstName), [Validators.required]],
+    LastName: [(this.data[0].LastName), [Validators.required]],
+    Gender: [(this.data[0].Gender), [Validators.required]],
+    JobTitle: [(this.data[0].JobTitle), [Validators.required]],
+    DOB: [(new Date(this.data[0].DOB)), [Validators.required]],
+    Email: [(this.data[0].Email), [Validators.required, Validators.email]],
+    ContactNumber: [(this.data[0].ContactNumber), [Validators.required, Validators.minLength(10)]],
+    YOExp: [(this.data[0].YOExp), [Validators.required]],
+    ProjectWork: [(this.data[0].ProjectWork), [Validators.required]],
+
   });
 
-  constructor(private fb: FormBuilder, private empservice: EmployeeProfileService, public dialogRef: MatDialogRef<EditProfileComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private route: Router) {}
 
-  ngOnInit(): void {
-
-
-  }
 
   onSave() {
     this.eUpdate = JSON.parse(localStorage.getItem('employee_Data')!);
     this.eRecord = this.eUpdate.findIndex((emp: any) => { return emp.Id == this.data[0].Id });
-    this.eUpdate[this.eRecord].FirstName = this.editForm.controls['FirstName'].value;
-    this.eUpdate[this.eRecord].LastName = this.editForm.controls['LastName'].value;
-    this.eUpdate[this.eRecord].Gender = this.editForm.controls['Gender'].value;
-    this.eUpdate[this.eRecord].JobTitle = this.editForm.controls['JobTitle'].value;
-    this.eUpdate[this.eRecord].DOB = this.editForm.controls['DOB'].value;
-    this.eUpdate[this.eRecord].Email = this.editForm.controls['Email'].value;
-    this.eUpdate[this.eRecord].ContactNumber = this.editForm.controls['ContactNumber'].value;
-    this.eUpdate[this.eRecord].YOExp = this.editForm.controls['YOExp'].value;
-    this.eUpdate[this.eRecord].ProjectWork = this.editForm.controls['ProjectWork'].value;
+    var updateArr: any = {
+      Id: this.eUpdate[this.eRecord].Id,
+      FirstName: this.editForm.controls['FirstName'].value,
+      LastName: this.editForm.controls['LastName'].value,
+      Gender: this.editForm.controls['Gender'].value,
+      JobTitle: this.editForm.controls['JobTitle'].value,
+      DOB: this.editForm.controls['DOB'].value,
+      Email: this.editForm.controls['Email'].value,
+      ContactNumber: this.editForm.controls['ContactNumber'].value,
+      YOExp: this.editForm.controls['YOExp'].value,
+      ProjectWork: this.editForm.controls['ProjectWork'].value,
+      Image: this.eUpdate[this.eRecord].Image,
+      Rating: this.eUpdate[this.eRecord].Rating,
+      isEdit: this.eUpdate[this.eRecord].isEdit
+
+    };
+    this.eUpdate[this.eRecord] = updateArr;
+
     localStorage.setItem('employee_Data', JSON.stringify(this.eUpdate));
-    this.route.navigate(['/employee-table']);
+
     this.dialogRef.close();
   }
 }

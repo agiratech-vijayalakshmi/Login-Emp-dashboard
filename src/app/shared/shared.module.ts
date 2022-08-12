@@ -23,6 +23,15 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MatCarouselModule } from 'ng-mat-carousel';
+import { NgImageSliderModule } from 'ng-image-slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
+
+
+
+
 
 
 @NgModule({
@@ -51,7 +60,14 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    CarouselModule,
+    MatCarouselModule,
+    NgImageSliderModule,
+    MatSlideToggleModule
+
+
+    
   
     
   ],
@@ -78,7 +94,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    CarouselModule,
+    MatCarouselModule,
+    NgImageSliderModule,
+    MatSlideToggleModule
+    
+    
     
 
     

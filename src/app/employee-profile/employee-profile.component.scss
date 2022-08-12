@@ -1,10 +1,11 @@
 ::ng-deep app-employee-profile{
     .container{
      margin-left: 10rem;
+  
     & .profile{
         display:flex;
         flex-direction: column;
-        margin:20px;
+         margin:20px;
         border: 4px solid black;
         border-radius: 15px;
         
@@ -60,7 +61,7 @@
                 background-color:white;
 
         &__edit{
-                 padding-left:33rem;
+                 padding-left:31rem;
                  padding-top:14px;
                  color:rgb(15, 15, 92);
 

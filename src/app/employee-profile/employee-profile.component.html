@@ -1,4 +1,10 @@
 <div class="container">
+
+    <div class="container__icons">
+        <!-- <button mat-button >
+            <mat-icon>arrow_left</mat-icon>
+        </button> -->
+    </div>
     <div class="profile" fxFlex="85%" fxLayout="row wrap">
         <div class="profile__content1" fxFlex="40%">
             <h1>EMPLOYEE PROFILE</h1>
@@ -13,9 +19,7 @@
             <div class="profile__content2__edit">
                 <button id="basic" type="button" mat-button (click)="onEdit()">
                     <mat-icon>edit</mat-icon>
-                  </button>
-             
-                <!-- <button class="profile__content2__edit--editbtn" mat-flat-button color="primary" type="click"><mat-icon>edit</mat-icon></button> -->
+                </button>
             </div>
 
             <div class="profile__content2__part1">
@@ -44,7 +48,7 @@
                     </tr>
                     <tr>
                         <td>Date Of Birth </td>
-                        <td> {{emplist[0].DOB | date:"dd/mm/yyyy"}}</td>
+                        <td> {{emplist[0].DOB | date:"dd/MM/YYYY"}}</td>
                     </tr>
                     <tr>
                         <td>Age </td>

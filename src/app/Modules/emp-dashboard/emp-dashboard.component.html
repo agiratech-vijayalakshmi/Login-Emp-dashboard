@@ -1,66 +1,79 @@
 <div class="container">
-  <mat-toolbar class="toolbar" >
-    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-     <mat-icon>menu</mat-icon>
-   </button>
-   <span>Employee Dashboard</span>
-   <span class="example-spacer"></span> 
+  <mat-toolbar class="toolbar">
+    <div>
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+      aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Employee Dashboard</span>
+    <span class="example-spacer"></span>
+  </div>
+  <div>
+    <button class="logout_btn" mat-flat-button  (click)="logout()">Logout</button>
+  </div>
   </mat-toolbar>
 
   <mat-drawer-container class="side-nav-container" autosize>
     <mat-drawer #drawer class="side-nav" mode="side">
-        <mat-list class="list"role="list">
-            <mat-list-item role="listitem"><mat-icon>account_circle</mat-icon><span class="span"> User Profile</span> </mat-list-item>
-            <mat-list-item role="listitem" routerLink="/employee-table"> 	<mat-icon> table_chart</mat-icon><span class="span">Employee Table</span></mat-list-item>
-            <mat-list-item role="listitem"> <mat-icon> email</mat-icon><span class="span">MailBox</span></mat-list-item>
-            <mat-list-item role="listitem"> <mat-icon>search</mat-icon><span class="span">Search</span></mat-list-item>
-            
-            <mat-list-item role="listitem"> <mat-icon>work_off</mat-icon><span class="span">Leave</span></mat-list-item>
-            <mat-list-item role="listitem" routerLink="/line-chart" ><mat-icon>calendar_today</mat-icon><span class="span">Calendar</span></mat-list-item>
-            <mat-list-item role="listitem"> <mat-icon>message</mat-icon>Chats<span class="span"></span> </mat-list-item>
-            <mat-list-item role="listitem"><mat-icon>assignment_return</mat-icon><span class="span" (click)="logout()">Logout</span></mat-list-item>
-          </mat-list>
+      <mat-list class="list" role="list">
+        <mat-list-item role="listitem">
+          <mat-icon>account_circle</mat-icon><span class="span"> User Profile</span>
+        </mat-list-item>
+        <mat-list-item role="listitem" routerLink="/employee-table">
+          <mat-icon> table_chart</mat-icon><span class="span">Employee Table</span>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon> email</mat-icon><span class="span">MailBox</span>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon>search</mat-icon><span class="span">Search</span>
+        </mat-list-item>
+
+        <mat-list-item role="listitem">
+          <mat-icon>work_off</mat-icon><span class="span">Leave</span>
+        </mat-list-item>
+        <mat-list-item role="listitem" routerLink="/line-chart">
+          <mat-icon>calendar_today</mat-icon><span class="span">Calendar</span>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon>message</mat-icon>Chats<span class="span"></span>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <mat-icon>assignment_return</mat-icon><span class="span" (click)="logout()">Logout</span>
+        </mat-list-item>
+      </mat-list>
     </mat-drawer>
 
-  <div class="header" fxfxLayoutGap="32px">
+    <!-- <div class="header" fxfxLayoutGap="32px"> -->
       <!-- <mat-card fxFlex="100" fxLayoutGap="10px"> -->
-        <h1>Employee Skills & Matrix</h1>
-        <!-- </mat-card> -->
-        <!-- <button type="submit" (click)="logout()">Logout</button> -->
-        <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+      <!-- <h1>Employee Skills & Matrix</h1> -->
+      <!-- </mat-card> -->
+      <!-- <button type="submit" (click)="logout()">Logout</button> -->
       
-  </div>
 
+    <!-- </div> -->
 
-  <div class="perfomence" fxLayout="row"  fxLayoutGap="32px">
-    <!-- <p> 30 Days Performance</p> -->
-    <div class="views">
-      <p>ATTENDANCE</p>
-      <P>96.3%</P>
+    <div class="perfomence" fxLayout="row" fxLayoutGap="32px">
+      <!-- <p> 30 Days Performance</p> -->
+      <div class="views">
+        <p>ATTENDANCE</p>
+        <P>96.3%</P>
+      </div>
+      <div class="follows">
+        <p>PERFOMENCE</p>
+        <P>98%</P>
+      </div>
+      <div class="likes">
+        <p>SKILLS</p>
+        <P>95%</P>
+      </div>
     </div>
-    <div class="follows">
-      <p>PERFOMENCE</p>
-      <P>98%</P>
+    <div id="chart-container">
+      <app-chart></app-chart>
     </div>
-  <div class="likes">
-      <p>SKILLS</p>
-      <P>95%</P>
-  </div>
-  </div>
-  <div id="chart-container">
-  <app-chart></app-chart>
+    <div>
+      <app-employee-carousel></app-employee-carousel>
+    </div>
+  </mat-drawer-container>
+
 </div>
-
-
-
-
-      
-     
-    
-    
-    
-    
-    
-    
-    
-    
